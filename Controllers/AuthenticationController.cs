@@ -3,7 +3,6 @@ using GitHubRestApiService.DataLayer.Providers;
 using GitHubRestApiService.Model;
 using GitHubRestApiService.Model.RequestsModel;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Configuration;
 using System;
 using System.Threading.Tasks;
 
@@ -43,50 +42,5 @@ namespace GitHubRestApiService.Controllers
                 return BadRequest($"{ex.Message}");
             }
         }
-
-
-
-        //[Route("Login")]
-        //[HttpPost]
-        //public async Task<IActionResult> Login2(UserCredentials userCredentials)
-        //{
-        //    UserCredentials currentUser = await dataBaseProvider.IsUserRegisteredAsync(userCredentials);
-        //    try
-        //    {
-        //        if (currentUser != null)
-        //        {
-        //            //create claims details based on the user information
-        //            var claims = new[] {
-        //            new Claim(JwtRegisteredClaimNames.Sub, config["Jwt:Subject"]),
-        //            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-        //            new Claim(JwtRegisteredClaimNames.Iat, DateTime.UtcNow.ToString()),
-        //            new Claim("Id",currentUser.Id.ToString()),
-        //            new Claim("FirstName",currentUser.UserName),
-        //            new Claim("LastName", currentUser.UserName),
-        //            new Claim("UserName",currentUser.UserName),
-        //            new Claim("Email", currentUser.Email)
-        //           };
-
-        //            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]));
-        //            var signIn = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-        //            var token = new JwtSecurityToken(config["Jwt:Issuer"], config["Jwt:Audience"], claims, expires: DateTime.UtcNow.AddDays(1), signingCredentials: signIn);
-        //            var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
-        //            return Ok(new { token = tokenString });
-        //            //return Ok(new JwtSecurityTokenHandler().WriteToken(token));
-        //        }
-        //        else
-        //        {
-        //            return BadRequest("Invalid credentials");
-        //        }
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        string message = ex.Message;
-        //        return BadRequest($"{ex.Message}");
-        //    }
-        //}
-
-
     }
 }
