@@ -29,10 +29,12 @@ namespace GitHubRestApiService.Controllers
             try
             {                
                 var searchResults = await serachProvider.SerachInRepository(searchRequest);
+                
+                if (searchResults!=null && searchResults.Any())
                 {
                     return Ok(searchResults);
                 }
-                if (!searchResults.Any())
+                else
                 {
                     return NotFound();
                 }

@@ -1,5 +1,4 @@
 ﻿using GitHubRestApiService.DataLayer.Interfaces;
-using GitHubRestApiService.DataLayer.Providers;
 using GitHubRestApiService.Model;
 using GitHubRestApiService.Model.RequestsModel;
 using Microsoft.AspNetCore.Mvc;
